@@ -1,10 +1,8 @@
 require "votematch/version"
-require "votematch/model/party_info"
 
 module Votematch
-  class Votematch
-    def your_party
-      party_info.parties.sample
-    end
+  require "votematch/model/party_info"
+  def self.your_party
+    Votematch::PartyInfo.new.parties.sample
   end
 end
